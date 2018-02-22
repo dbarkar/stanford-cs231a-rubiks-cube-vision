@@ -50,14 +50,14 @@ def resize(image):
 
 @timing
 def blur(image):
-    kernel_size = 7
+    kernel_size = 3
     return cv2.GaussianBlur(image, (kernel_size, kernel_size), 0)
 
 
 @timing
 def edges(image):
     threshold1 = 150
-    threshold2 = 500
+    threshold2 = 200
     return cv2.Canny(image, threshold1, threshold2)
 
 
@@ -170,7 +170,7 @@ def main():
     blurred_frame = blur(frame)
     show_image('Blurred', blurred_frame)
 
-    edges_frame = edges(frame)
+    edges_frame = edges(blurred_frame)
     show_image('Edges', edges_frame)
 
     # threshold = threshold(frame)
