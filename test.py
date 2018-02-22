@@ -3,6 +3,7 @@ import numpy as np
 import cv2
 import os
 
+
 def show_image(name, image):
     max_width = 1980
     cv2.namedWindow(name)
@@ -17,11 +18,13 @@ def show_image(name, image):
     output_dir = path[0] + os.sep + 'out' + os.sep + os.path.splitext(path[1])[0] + os.sep
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    cv2.imwrite(output_dir + name + '.png', image)
+    cv2.imwrite(output_dir + str(show_image.step) + '. ' + name + '.png', image)
+    show_image.step += 1
 
 
 show_image.x = 0
 show_image.y = 200
+show_image.step = 1
 
 
 def timing(f):
