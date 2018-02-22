@@ -83,7 +83,7 @@ def get_contours(image):
 
 @timing
 def filter_contours_by_area(contours):
-    min_area = 50
+    min_area = 88
     max_area = 5500
     ret = []
     for c in contours:
