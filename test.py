@@ -117,7 +117,7 @@ def find_face_pieces(contours):
         return contours
 
     # TODO: improve
-    threshold = 0.115
+    threshold = 0.155
     matched = []
     found = False
     for c1 in contours:
@@ -220,7 +220,7 @@ def main():
 
 
 if __name__ == "__main__":
-    input_file = 'tests/far.jpg'
+    input_file = 'tests/cluttered.jpg'
     main()
     print('total: %0.3f ms' % timing.total)
     cv2.waitKey(0)
